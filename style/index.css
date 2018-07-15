@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+#container span.icon-folder {
+  width: 8px;
+  height: 8px;
+  background-image: url('../images/icon-folder.png');
+}
+.app-title {
+  width: 100%;
+  height: 60px;
+  background-color: grey;
+  line-height: 60px;
+  padding-left: 30px;
+  font-size: 1.5em;
+}
+.all-list {
+  width: 100%;
+  flex: 10;
+  display: flex;
+}
+.all-list .column {
+  flex: 1;
+  padding: 10px;
+  border: solid 1px grey;
+}
+.all-list #todo-event {
+  flex: 3;
+}

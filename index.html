@@ -2,11 +2,29 @@
   <head>
     <title>Vue Todo List</title>
     <script src="https://unpkg.com/vue"></script>
-    <!-- <link rel="stylesheet" href=""> -->
+    <link rel="stylesheet" href="./style/index.css">
   </head>
   <body>
     <div id="container">
-
+      <div class="app-title">
+        GTD Tools
+      </div>
+      <div class="all-list">
+        <div class="column" id="class-list">
+          <div id="com-class-list">
+            <div>所有任务（{{allListLength}}）</div>
+            <div v-for="f in folders" class="folders">
+              <div>
+                <span class="icon-folder"></span>
+                {{f.feild}}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="column" id="todo-list"></div>
+        <div class="column" id="todo-event"></div>
+      </div>
     </div>
+    <script src="./modules/class_list.js"></script>
   </body>
 </html>

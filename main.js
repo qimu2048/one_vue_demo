@@ -1,0 +1,1 @@
+var ClassList = require('./components/class_list');

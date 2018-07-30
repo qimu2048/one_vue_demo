@@ -8,12 +8,31 @@ body {
   width: 100%;
   height: 100%;
 }
-#container span.icon-folder {
-  width: 8px;
-  height: 8px;
-  background-image: url('../images/icon-folder.png');
+#container .left-list {
+  background-color: #dee2e6;
 }
-.app-title {
+#container span.icon-folder {
+  background: url(../images/icon-folder.png) no-repeat;
+}
+#container span.icon-delete {
+  background: url(../images/icon-delete.png) no-repeat;
+  margin-right: 10px;
+}
+#container span.icon-file {
+  background: url(../images/icon-file.png) no-repeat;
+  margin-left: 20px;
+}
+#container span.icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  background-size: 16px 16px;
+  vertical-align: middle;
+}
+#container span.hide {
+  visibility: hidden;
+}
+#container .app-title {
   width: 100%;
   height: 60px;
   background-color: grey;
@@ -21,16 +40,29 @@ body {
   padding-left: 30px;
   font-size: 1.5em;
 }
-.all-list {
+#container .all-list {
   width: 100%;
   flex: 10;
   display: flex;
 }
-.all-list .column {
+#container .all-list .column {
   flex: 1;
-  padding: 10px;
+  padding-top: 10px;
   border: solid 1px grey;
 }
-.all-list #todo-event {
+#container .all-list .all-task,
+#container .all-list .folders > div {
+  padding-left: 10px;
+  line-height: 30px;
+}
+#container .all-list .all-task:hover,
+#container .all-list .folders > div:hover {
+  background-color: #fff;
+}
+#container .all-list .all-task:hover span.hide,
+#container .all-list .folders > div:hover span.hide {
+  visibility: visible;
+}
+#container .all-list #todo-event {
   flex: 3;
 }

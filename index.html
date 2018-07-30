@@ -1,7 +1,7 @@
 <html>
   <head>
     <title>Vue Todo List</title>
-    <script src="https://unpkg.com/vue"></script>
+    <script src="./lib/core/vue.js"></script>
     <link rel="stylesheet" href="./style/index.css">
   </head>
   <body>
@@ -10,13 +10,19 @@
         GTD Tools
       </div>
       <div class="all-list">
-        <div class="column" id="class-list">
+        <div class="column left-list" id="class-list">
           <div id="com-class-list">
-            <div>所有任务（{{allListLength}}）</div>
+            <div class="all-task">所有任务（{{allListLength}}）</div>
             <div v-for="f in folders" class="folders">
               <div>
-                <span class="icon-folder"></span>
+                <span class="icon icon-folder"></span>
                 {{f.feild}}
+                <span class="icon icon-delete hide"></span>
+              </div>
+              <div v-for="t in f.tasks">
+                <span class="icon icon-file"></span>
+                {{t.name}}
+                <span class="icon icon-delete hide"></span>
               </div>
             </div>
           </div>
@@ -25,6 +31,6 @@
         <div class="column" id="todo-event"></div>
       </div>
     </div>
-    <script src="./modules/class_list.js"></script>
+    <script src="./lib/class_list.js"></script>
   </body>
 </html>

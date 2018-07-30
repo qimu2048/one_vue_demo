@@ -8,31 +8,64 @@ body {
   flex-direction: column;
   width: 100%;
   height: 100%;
+  .left-list {
+    background-color: #dee2e6;
+  }
   span.icon-folder {
-    width: 8px;
-    height: 8px;
-    background-image: url('../images/icon-folder.png');
+    background: url(../images/icon-folder.png) no-repeat;
   }
-}
-.app-title {
-  width: 100%;
-  height: 60px;
-  background-color: grey;
-  line-height: 60px;
-  padding-left: 30px;
-  font-size: 1.5em;
-}
+  span.icon-delete {
+    background: url(../images/icon-delete.png) no-repeat;
+    // float: right;
+    margin-right: 10px;
+  }
+  span.icon-file {
+    background: url(../images/icon-file.png) no-repeat;
+    margin-left: 20px;
+  }
+  span.icon {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background-size: 16px 16px;
+    vertical-align: middle;
+  }
+  span.hide {
+    visibility: hidden;
+  }
 
-.all-list {
-  width: 100%;
-  flex: 10;
-  display: flex;
-  .column {
-    flex: 1;
-    padding: 10px;
-    border: solid 1px grey;
+  .app-title {
+    width: 100%;
+    height: 60px;
+    background-color: grey;
+    line-height: 60px;
+    padding-left: 30px;
+    font-size: 1.5em;
   }
-  #todo-event {
-    flex: 3;
+
+  .all-list {
+    width: 100%;
+    flex: 10;
+    display: flex;
+    .column {
+      flex: 1;
+      padding-top: 10px;
+      border: solid 1px grey;
+    }
+    .all-task,
+    .folders>div {
+      padding-left: 10px;
+      line-height: 30px;
+      &:hover {
+        background-color: #fff;
+        span.hide {
+          visibility: visible;
+        }
+      }
+    }
+
+    #todo-event {
+      flex: 3;
+    }
   }
 }

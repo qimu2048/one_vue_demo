@@ -9,28 +9,47 @@
       <div class="app-title">
         GTD Tools
       </div>
-      <div class="all-list">
+      <div class="all-list" id="all-list">
         <div class="column left-list" id="class-list">
           <div id="com-class-list">
-            <div class="all-task">所有任务（{{allListLength}}）</div>
-            <div v-for="f in folders" class="folders">
-              <div>
+            <div class="all-task" :class="{'selected': isSelected}">
+              所有任务（{{allListLength}})
+            </div>
+            <div v-for="f in folders" class="folder">
+              <div :class="{'selected': selected_folder == f.feild}" @click="setSelected">
                 <span class="icon icon-folder"></span>
                 {{f.feild}}
                 <span class="icon icon-delete hide"></span>
               </div>
-              <div v-for="t in f.tasks">
+              <div v-for="t in f.tasks" class="task">
                 <span class="icon icon-file"></span>
                 {{t.name}}
                 <span class="icon icon-delete hide"></span>
               </div>
             </div>
           </div>
+          <div class="com-add-new" id="com-add-new-01">
+            <add-new btn-title='新增分类'></add-new>
+          </div>
         </div>
-        <div class="column" id="todo-list"></div>
+        <div class="column" id="todo-list">
+          <div class="todo-list-filter">
+            <span class="filter-tag">所有</span>
+            <span class="filter-tag">未完成</span>
+            <span class="filter-tag">已完成</span>
+          </div>
+          <div id="com-todo-list">
+            todo list here
+          </div>
+          <div class="com-add-new" id="com-add-new-02">
+            <add-new btn-title='新增任务'></add-new>
+          </div>
+        </div>
         <div class="column" id="todo-event"></div>
       </div>
     </div>
     <script src="./lib/class_list.js"></script>
+    <!-- <script src="./lib/todo_list.js"></script> -->
+    <script src="./lib/components/add_new.js"></script>
   </body>
 </html>
